@@ -2,32 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.drop-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.drop {
+  position: relative;
+  opacity: 10px;
+  box-shadow: 
+    inset 20px 20px 20px rgba(0, 0, 0, 0.05),
+    25px 35px 20px rgba(0, 0, 0, 0.05),
+    20px 30px 30px rgba(0, 0, 0, 0.05),
+    inset 0 5px 10px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  animation: raindrop 2s infinite linear; /* Adjust animation duration as needed */
+}
+
+.drop::before,
+.drop::after {
+  content: "";
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+.drop::before {
+  top: 20px;
+  left: 10px;
+  width: 16px;
+  height: 16px;
+}
+
+.drop::after {
+  top: 42px;
+  left: 8px;
+  width: 8px;
+  height: 8px;
+}
+
+@keyframes raindrop {
+  0% {
+    border-radius: 50%;
+    transform: translateY(0) translateX(-2px);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+  25% {
+    transform: translateY(4px) translateX(2px);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+  }
+  50% {
+    border-radius: 50% 50% 50% 50% / 40% 60% 80% 20%;
+    transform: translateY(8px) translateX(-2px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.95);
+  }
+  75% {
+    transform: translateY(4px) translateX(2px);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+  }
+  100% {
+    border-radius: 50%;
+    transform: translateY(0) translateX(-2px);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+.raindrops {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(transparent 95%, #87CEEB 95%);
+  animation: raindropAnimation 1s linear infinite;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@keyframes raindropAnimation {
+  to {
+    background-position: 0 100%;
   }
 }
