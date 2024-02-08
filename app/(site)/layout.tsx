@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
+import Head from 'next/head';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { getPages } from '@/sanity/sanity-utils';
@@ -33,9 +34,10 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   return (
     <html lang="en">
-      <head>
-      <meta name="p:domain_verify" content="18b2e53885de597dcf553b1c4463befc"/>
-      </head>
+      <Head>
+        {/* Add the meta tag to the head section */}
+        <meta name="p:domain_verify" content="18b2e53885de597dcf553b1c4463befc"/>
+      </Head>
       <body className="mx-auto sm:max-w-[99%] sm:px-5 md:max-w-[95%] md:px-5 lg:max-w-[67%] bg-center">
         {/* Pass the fetched pages data to the Header component */}
         <Header title="Bridging The Canyon" pages={pages} />
