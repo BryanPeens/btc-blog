@@ -36,6 +36,7 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <title>Bridging The Canyon</title>
         {/* Add the meta tag to the head section */}
         <meta name="p:domain_verify" content="18b2e53885de597dcf553b1c4463befc"/>
+        
       </head>
       <body className="mx-auto sm:max-w-[99%] sm:px-5 md:max-w-[95%] md:px-5 lg:max-w-[67%] bg-center">
         {/* Pass the fetched pages data to the Header component */}
