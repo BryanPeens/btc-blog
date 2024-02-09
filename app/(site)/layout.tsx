@@ -1,9 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import Head from 'next/head';
 import { Metadata } from 'next';
-import Link from 'next/link';
 import { getPages } from '@/sanity/sanity-utils';
 import Header from './Navbar';
 
