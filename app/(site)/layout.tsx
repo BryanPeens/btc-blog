@@ -39,7 +39,6 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         
       </head>
       <body className="mx-auto sm:max-w-[99%] sm:px-5 md:max-w-[95%] md:px-5 lg:max-w-[67%] bg-center">
-        {/* Pass the fetched pages data to the Header component */}
         <Header title="Bridging The Canyon" pages={pages} />
 
         <main className="py-8 px-1 my-16">{children}</main>
