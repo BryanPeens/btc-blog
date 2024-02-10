@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { getPages } from "@/sanity/sanity-utils";
 import Header from "./Navbar";
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 import "../globals.css";
 
 interface Page {
@@ -39,6 +39,7 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
         <main className="py-8 px-1 my-16">{children}</main>
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS || ''} />
+        <GoogleTagManager gtmId={"GTM-K7JT9LJX" || ''}  />
 
       </body>
     </html>
