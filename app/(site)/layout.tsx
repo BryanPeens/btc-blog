@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { getPages } from "@/sanity/sanity-utils";
 import Header from "./Navbar";
+import Footer from "./Footer";
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 import "../globals.css";
 
@@ -34,12 +35,15 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           content="18b2e53885de597dcf553b1c4463befc"
         />
       </head>
-      <body className="mx-auto sm:max-w-[99%] sm:px-5 md:max-w-[95%] md:px-5 lg:max-w-[67%] bg-center">
+      <body className="mx-auto bg-center">
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS || ''} />
+        <GoogleTagManager gtmId={"GTM-K7JT9LJX"  || ''}  />
+
         <Header title="Bridging The Canyon" pages={pages} />
 
-        <main className="py-8 px-1 my-16">{children}</main>
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS || ''} />
-        <GoogleTagManager gtmId={"GTM-K7JT9LJX" || ''}  />
+        <main className="p-2 mt-20">{children}</main>
+
+        <Footer/>
 
       </body>
     </html>

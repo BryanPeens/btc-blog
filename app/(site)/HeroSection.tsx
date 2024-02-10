@@ -38,7 +38,7 @@ export default async function HeroSection() {
   const gridColSize = hero.heroGallery.length;
 
   return (
-    <div className="bg-slate-800 text-white py-20 px-6 md:px-12 lg:px-24 xl:px-32">
+    <div className="bg-slate-800 text-white py-20 px-6 md:px-12 lg:px-24 xl:px-32 sm:max-w-[99%] sm:px-5 md:max-w-[95%] lg:max-w-[100%] bg-center">
       <div className="max-w-4xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="order-last md:order-first md:mt-0 drop-container mx-auto">
