@@ -38,7 +38,8 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <Header title="Bridging The Canyon" pages={pages} />
 
         <main className="py-8 px-1 my-16">{children}</main>
-        <GoogleAnalytics gaId="G-CPE9MBY0KG" />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS || ''} />
+
       </body>
     </html>
   );
