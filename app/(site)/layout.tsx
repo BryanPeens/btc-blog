@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Metadata } from 'next';
 import { getPages } from '@/sanity/sanity-utils';
 import Header from './Navbar';
+import Script from 'next/script';
 
 import '../globals.css';
 
@@ -24,7 +25,7 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
     fetchPages();
   }, []);
-
+``
   const metadata: Metadata = {
     title: 'Bridging The Canyon',
     description: 'Bridging The Canyon Blog site.',
@@ -36,6 +37,21 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <title>Bridging The Canyon</title>
         {/* Add the meta tag to the head section */}
         <meta name="p:domain_verify" content="18b2e53885de597dcf553b1c4463befc"/>
+        
+
+        <Script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}/>
+        <Script id='ga-script' strategy='lazyOnload'>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+  
+            gtag('config', '${process.env.GOOGLE_ANALYTICS}');
+          `}
+        </Script>
+
+
+
         
       </head>
       <body className="mx-auto sm:max-w-[99%] sm:px-5 md:max-w-[95%] md:px-5 lg:max-w-[67%] bg-center">
