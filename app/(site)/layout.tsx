@@ -42,7 +42,6 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
         <main className="p-2 mt-20">{children}</main>
         <Analytics />
-        {/* footer */}
         <Footer/>
 
       </body>
