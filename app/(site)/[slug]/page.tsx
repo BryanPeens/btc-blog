@@ -15,14 +15,12 @@ export default async function Page({ params }: Props) {
             bg-clip-text text-transparent text-5xl drop-shadow font-extrabold">
         {page.title}
       </h1>
-
       <div
         className="mt-5 font-bold text-gray-700 bg-gradient-to-r from-gray-400 via-teal-300 to-indigo-600 
         bg-clip-text text-transparent mx-auto "
       >
         <PortableText value={page.content} />
       </div>
-
       <Image
         src={page.image}
         alt={page.title}

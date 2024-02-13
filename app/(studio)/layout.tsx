@@ -5,7 +5,6 @@ export const metadata: Metadata = {
   title: "Bridging The Canyon",
   description: "Bridging The Canyon Blog & Adventures",
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
