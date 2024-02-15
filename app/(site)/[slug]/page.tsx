@@ -1,6 +1,7 @@
 import { getPage } from "@/sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
+import ContactForm from "../Contact";
 
 type Props = {
   params: { slug: string };
@@ -28,6 +29,7 @@ export default async function Page({ params }: Props) {
         height={1080}
         className="mt-4 object-cover rounded-sm"
       />
+      <ContactForm/>
     </div>
   );
 }

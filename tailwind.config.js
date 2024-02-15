@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         // 'my_bg_image': "url('./Images/bg4.png')",
+        'bg-form-background': "url('./images/deer.png')",
       },
       colors: {
         primary: '#3498db',
